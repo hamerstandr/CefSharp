@@ -69,7 +69,9 @@ namespace CefSharp.Example
 
             var uri = new Uri(request.Url);
             var fileName = uri.AbsolutePath;
-
+            string architecture = "";
+            //if(CefExample.IsProcess)
+            //architecture = Environment.Is64BitProcess ? "x64" : "x86";
             //Load a file directly from Disk
             if (fileName.EndsWith("CefSharp.Core.xml", StringComparison.OrdinalIgnoreCase))
             {
@@ -77,7 +79,7 @@ namespace CefSharp.Example
                 var mimeType = ResourceHandler.GetMimeType(".xml");
                 //Load a resource handler for CefSharp.Core.xml
                 //mimeType is optional and will default to text/html
-                return ResourceHandler.FromFilePath("CefSharp.Core.xml", mimeType, autoDisposeStream: true);
+                return ResourceHandler.FromFilePath( "CefSharp.Core.xml", mimeType, autoDisposeStream: true);
             }
 
             if (uri.Host == "cefsharp.com" && schemeName == "https" && (string.Equals(fileName, "/PostDataTest.html", StringComparison.OrdinalIgnoreCase) ||

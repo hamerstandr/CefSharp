@@ -54,6 +54,14 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -85,9 +93,6 @@
       <DependentUpon>BrowserTabUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ChromeWidgetMessageInterceptor.cs" />
-    <Compile Include="ChromiumContainerControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Handlers\DisplayHandler.cs" />
     <Compile Include="Handlers\KeyboardHandler.cs" />
     <Compile Include="Handlers\LifeSpanHandler.cs" />

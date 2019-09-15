@@ -19,7 +19,7 @@ namespace CefSharp.Example.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -91,7 +91,7 @@ namespace CefSharp.Example.Properties {
         ////*
         /// * Scaffolding
         /// *
-        /// * Update the basics of our docum [rest of string was truncated]&quot;;.
+        /// * Update the basics of our documents to prep for docs content. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string assets_css_docs_css {
             get {
@@ -120,7 +120,8 @@ namespace CefSharp.Example.Properties {
         ///.syntaxhighlighter div,
         ///.syntaxhighlighter code,
         ///.syntaxhighlighter table,
-        ///.syntaxhighlighte [rest of string was truncated]&quot;;.
+        ///.syntaxhighlighter table td,
+        ///.syntaxh [rest of string was truncated]&quot;;.
         /// </summary>
         public static string assets_css_shCore_css {
             get {
@@ -149,7 +150,8 @@ namespace CefSharp.Example.Properties {
         ///.syntaxhighlighter div,
         ///.syntaxhighlighter code,
         ///.syntaxhighlighter table,
-        ///.syntaxhighlighte [rest of string was truncated]&quot;;.
+        ///.syntaxhighlighter table td,
+        ///.syntaxh [rest of string was truncated]&quot;;.
         /// </summary>
         public static string assets_css_shCoreDefault_css {
             get {
@@ -174,7 +176,7 @@ namespace CefSharp.Example.Properties {
         ///        $window.on(&apos;load&apos;, function () {
         ///            $body.scrollspy(&apos;refresh&apos;);
         ///        });
-        ///    [rest of string was truncated]&quot;;.
+        ///        $(&apos;.bs-docs [rest of string was truncated]&quot;;.
         /// </summary>
         public static string assets_js_application_js {
             get {
@@ -184,7 +186,7 @@ namespace CefSharp.Example.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to /*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
-        ///!function(a,b){&quot;object&quot;==typeof module&amp;&amp;&quot;object&quot;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&quot;jQuery requires a window with a document&quot;);return b(a)}:b(a)}(&quot;undefined&quot;!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=&quot;1.11.3&quot;,m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\x [rest of string was truncated]&quot;;.
+        ///!function(a,b){&quot;object&quot;==typeof module&amp;&amp;&quot;object&quot;==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error(&quot;jQuery requires a window with a document&quot;);return b(a)}:b(a)}(&quot;undefined&quot;!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l=&quot;1.11.3&quot;,m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA [rest of string was truncated]&quot;;.
         /// </summary>
         public static string assets_js_jquery_js {
             get {
@@ -212,7 +214,9 @@ namespace CefSharp.Example.Properties {
         ///;(function()
         ///{
         ///	// CommonJS
-        ///	typeof(require) != &apos;undefined&apos; ? SyntaxHighlighter = require(&apos;shCore&apos;).SyntaxHighlight [rest of string was truncated]&quot;;.
+        ///	typeof(require) != &apos;undefined&apos; ? SyntaxHighlighter = require(&apos;shCore&apos;).SyntaxHighlighter : null;
+        ///
+        ///	functi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string assets_js_shBrushCSharp_js {
             get {
@@ -239,7 +243,7 @@ namespace CefSharp.Example.Properties {
         /// */
         ///; (function () {
         ///    // CommonJS
-        ///    typeof (require) != &apos;undefined&apos; ? SyntaxHighlighter = require(&apos;shCore&apos;).SyntaxH [rest of string was truncated]&quot;;.
+        ///    typeof (require) != &apos;undefined&apos; ? SyntaxHighlighter = require(&apos;shCore&apos;).SyntaxHighlighter : null; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string assets_js_shBrushJScript_js {
             get {
@@ -264,7 +268,7 @@ namespace CefSharp.Example.Properties {
         /// * @license
         /// * Dual licensed under the MIT and GPL licenses.
         /// */
-        ///eval(function (p, a, c, k, e, d) { e = function (c) { return (c &lt; a ? &apos;&apos; : e(parseInt(c / a))) + ((c = c % a) &gt; 35 ? S [rest of string was truncated]&quot;;.
+        ///eval(function (p, a, c, k, e, d) { e = function (c) { return (c &lt; a ? &apos;&apos; : e(parseInt(c / a))) + ((c = c % a) &gt; 35 ? String.fromCharCo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string assets_js_shCore_js {
             get {
@@ -285,20 +289,21 @@ namespace CefSharp.Example.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
         ///&lt;html&gt;
-        ///    &lt;head&gt;
-        ///        &lt;title&gt;Binding Test&lt;/title&gt;
-        ///        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://code.jquery.com/qunit/qunit-2.4.1.css&quot;&gt;
-        ///    &lt;/head&gt;
-        ///    &lt;body&gt;
-        ///        &lt;div id=&quot;qunit&quot;&gt;&lt;/div&gt;
-        ///        &lt;div id=&quot;qunit-fixture&quot;&gt;&lt;/div&gt;
-        ///        &lt;script src=&quot;https://code.jquery.com/qunit/qunit-2.4.1.js&quot;&gt;&lt;/script&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Binding Test&lt;/title&gt;
+        ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://code.jquery.com/qunit/qunit-2.4.1.css&quot;&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;div id=&quot;qunit&quot;&gt;&lt;/div&gt;
+        ///    &lt;div id=&quot;qunit-fixture&quot;&gt;&lt;/div&gt;
+        ///    &lt;script src=&quot;https://code.jquery.com/qunit/qunit-2.4.1.js&quot;&gt;&lt;/script&gt;
         ///
-        ///        &lt;!--&lt;script type=&quot;text/javascript&quot;&gt;
-        ///        (async function() {
-        ///            // &lt;embed user provided code here&gt;
+        ///    &lt;!--&lt;script type=&quot;text/javascript&quot;&gt;
+        ///    (async function() {
+        ///        // &lt;embed user provided code here&gt;
         ///
-        ///     [rest of string was truncated]&quot;;.
+        ///        await CefSharp.BindObjectAsync(&quot;boundAsync&quot;, &quot;bound&quot;);
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BindingTest {
             get {
@@ -323,7 +328,7 @@ namespace CefSharp.Example.Properties {
         ///    &lt;div id=&quot;qunit-fixture&quot;&gt;&lt;/div&gt;
         ///    &lt;script src=&quot;https://code.jquery.com/qunit/qunit-2.4.1.js&quot;&gt;&lt;/script&gt;
         ///
-        ///     [rest of string was truncated]&quot;;.
+        ///    &lt;script type=&quot;te [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BindingTestsAsyncTask {
             get {
@@ -339,16 +344,16 @@ namespace CefSharp.Example.Properties {
         ///    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://code.jquery.com/qunit/qunit-2.4.1.css&quot;&gt;
         ///&lt;/head&gt;
         ///&lt;body&gt;
-        ///    &lt;div&gt;
-        ///        These tests require CefSharpSettings.ConcurrentTaskExecution = true;
-        ///        Which by default is set to false
-        ///    &lt;/div&gt;
-        ///
         ///    &lt;div id=&quot;qunit&quot;&gt;&lt;/div&gt;
         ///    &lt;div id=&quot;qunit-fixture&quot;&gt;&lt;/div&gt;
         ///    &lt;script src=&quot;https://code.jquery.com/qunit/qunit-2.4.1.js&quot;&gt;&lt;/script&gt;
         ///
-        ///    &lt;script typ [rest of string was truncated]&quot;;.
+        ///    &lt;script type=&quot;text/javascript&quot;&gt;
+        ///        (async () =&gt;
+        ///        {
+        ///            await CefSharp.BindObjectAsync(&quot;boundAsync&quot;);
+        ///
+        ///            QUnit.test(&quot;Async call (Divide 16 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BindingTestSingle {
             get {
@@ -365,7 +370,7 @@ namespace CefSharp.Example.Properties {
         /// * http://www.apache.org/licenses/LICENSE-2.0
         /// *
         /// * Designed and built with all the love in the world by @mdo and @fat.
-        /// *//*! normalize.css v2.1.0 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-famil [rest of string was truncated]&quot;;.
+        /// *//*! normalize.css v2.1.0 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-s [rest of string was truncated]&quot;;.
         /// </summary>
         public static string bootstrap_min_css {
             get {
@@ -379,7 +384,7 @@ namespace CefSharp.Example.Properties {
         ///* Copyright 2013 Twitter Inc.
         ///* http://www.apache.org/licenses/LICENSE-2.0
         ///*/
-        ///if (!jQuery) throw new Error(&quot;Bootstrap requires jQuery&quot;); +function (a) { &quot;use strict&quot;; function b() { var a = document.createElement(&quot;bootstrap&quot;), b = { WebkitTransition: &quot;webkitTransitionEnd&quot;, MozTransition: &quot;transitionend&quot;, OTransition: &quot;oTransitionEnd otransitionend&quot;, transition: &quot;transitionend&quot; }; for (var c in b) if (void 0 !== a.style[c]) return { end: b[c] } } a.fn.emulateTr [rest of string was truncated]&quot;;.
+        ///if (!jQuery) throw new Error(&quot;Bootstrap requires jQuery&quot;); +function (a) { &quot;use strict&quot;; function b() { var a = document.createElement(&quot;bootstrap&quot;), b = { WebkitTransition: &quot;webkitTransitionEnd&quot;, MozTransition: &quot;transitionend&quot;, OTransition: &quot;oTransitionEnd otransitionend&quot;, transition: &quot;transitionend&quot; }; for (var c in b) if (void 0 !== a.style[c]) return { end: b[c] } } a.fn.emulateTransit [rest of string was truncated]&quot;;.
         /// </summary>
         public static string bootstrap_min_js {
             get {
@@ -411,7 +416,7 @@ namespace CefSharp.Example.Properties {
         ///            var testCodecs = [
         ///                { type: &apos;H.264&apos;, contentType: &apos;video/mp4; codecs=&quot;avc1.42E01E&quot;&apos; },
         ///                { type: &apos;H.264/MPEG-4 AVC&apos;, contentType: &apos;video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;&apos; },
-        ///                { type: &apos;ogg&apos;, contentType: &apos;vid [rest of string was truncated]&quot;;.
+        ///                { type: &apos;ogg&apos;, contentType: &apos;video/ogg; codecs [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CdmSupportTest {
             get {
@@ -442,7 +447,7 @@ namespace CefSharp.Example.Properties {
         ///            25% {
         ///                background-color: yellow;
         ///                left: 200px;
-        /// [rest of string was truncated]&quot;;.
+        ///                top: 0 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CssAnimation {
             get {
@@ -464,7 +469,7 @@ namespace CefSharp.Example.Properties {
         ///        function allowDrop(ev, effect)
         ///        {
         ///            ev.dataTransfer.dropEffect = effect;
-        ///    [rest of string was truncated]&quot;;.
+        ///            ev.p [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DragDropCursorsTest {
             get {
@@ -490,7 +495,7 @@ namespace CefSharp.Example.Properties {
         ///
         ///    &lt;div style=&quot;-webkit-app-region: drag;width:400px;height:400px;border:1px solid black;&quot;&gt;
         ///        A draggable area
-        ///        &lt;div style=&quot;-webkit-app-region:  [rest of string was truncated]&quot;;.
+        ///        &lt;div style=&quot;-webkit-app-region: no-drag; margin:2 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DraggableRegionTest {
             get {
@@ -513,7 +518,8 @@ namespace CefSharp.Example.Properties {
         ///    &lt;body&gt;
         ///        &lt;p&gt;
         ///            Exception string for nested exceptions:&lt;br /&gt;
-        ///            &lt;script type=&quot;text/javasc [rest of string was truncated]&quot;;.
+        ///            &lt;script type=&quot;text/javascript&quot;&gt;
+        ///        [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ExceptionTest {
             get {
@@ -574,7 +580,8 @@ namespace CefSharp.Example.Properties {
         ///    &lt;!-- Bootstrap core CSS --&gt;
         ///    &lt;link href=&quot;bootstrap/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
         ///    &lt;!-- Page-specific extras --&gt;
-        ///    &lt;link href=&quot;assets/css/docs.css&quot; rel=&quot;stylesheet [rest of string was truncated]&quot;;.
+        ///    &lt;link href=&quot;assets/css/docs.css&quot; rel=&quot;stylesheet&quot;&gt;
+        ///    &lt;link [rest of string was truncated]&quot;;.
         /// </summary>
         public static string home_html {
             get {
@@ -605,7 +612,7 @@ namespace CefSharp.Example.Properties {
         ///    &lt;/script&gt;
         ///&lt;/head&gt;
         ///&lt;body&gt;
-        ///    &lt; [rest of string was truncated]&quot;;.
+        ///    &lt;h1&gt;Javascript Callback [rest of string was truncated]&quot;;.
         /// </summary>
         public static string JavascriptCallbackTest {
             get {
@@ -628,7 +635,7 @@ namespace CefSharp.Example.Properties {
         ///        &lt;script type=&quot;text/javascript&quot;&gt;
         ///        (function()
         ///        {            
-        ///            QUnit.test( &quot;bound.repea [rest of string was truncated]&quot;;.
+        ///            QUnit.test( &quot;bound.repeat(&apos;hi &apos;, 5)&quot;,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LegacyBindingTest {
             get {
@@ -648,7 +655,7 @@ namespace CefSharp.Example.Properties {
         ///            {
         ///                console.log(&quot;Replacing Container &quot; + id);
         ///                var container = document.getElementById(&quot;dynamicContainer&quot; + id);
-        ///                var newFram [rest of string was truncated]&quot;;.
+        ///                var newFrame = documen [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MultiBindingTest {
             get {
@@ -669,7 +676,7 @@ namespace CefSharp.Example.Properties {
         ///        &lt;br /&gt;
         ///        &lt;a href=&quot;#&quot; onclick=&quot;window.open(&apos;custom://cefsharp/BindingTest.html&apos;)&quot;&gt;BindingTest.html&lt;/a&gt;
         ///        &lt;br /&gt;
-        ///        &lt;a href=&quot;#&quot; onclick [rest of string was truncated]&quot;;.
+        ///        &lt;a href=&quot;#&quot; onclick=&quot;window.ope [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PopupTest {
             get {
@@ -692,9 +699,11 @@ namespace CefSharp.Example.Properties {
         ///    &lt;script src=&quot;https://code.jquery.com/qunit/qunit-2.4.1.js&quot;&gt;&lt;/script&gt;
         ///
         ///    &lt;script type=&quot;text/javascript&quot;&gt;
+        ///        let PostMessageIntTestCallback;
+        ///
         ///        (async () =&gt;
         ///        {
-        ///            QUnit.test(&quot;PostMessage Test:&quot;, function  [rest of string was truncated]&quot;;.
+        ///            QUnit.test(&quot;Post [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PostMessageTest {
             get {
@@ -734,7 +743,7 @@ namespace CefSharp.Example.Properties {
         ///&lt;body bgcolor=&quot;white&quot;&gt;
         ///    &lt;p&gt;The text shown below in &lt;font color=&quot;red&quot;&gt;red&lt;/font&gt; has been replaced by the filter. This document is &gt; 32kb in order to exceed the standard output buffer size.&lt;/p&gt;
         ///    &lt;p&gt;&lt;font color=&quot;red&quot;&gt;REPLACE_THIS_STRING&lt;/font&gt;&lt;/p&gt;
-        ///    &lt;p&gt;0. It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the [rest of string was truncated]&quot;;.
+        ///    &lt;p&gt;0. It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ResponseFilterTest {
             get {
@@ -760,7 +769,7 @@ namespace CefSharp.Example.Properties {
         ///                document.body.appendChild(htmlNode);
         ///            }
         ///
-        ///            htmlNode.innerHTML [rest of string was truncated]&quot;;.
+        ///            htmlNode.innerHTML += &quot;&lt;p&gt;&quot; + text  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SchemeTest {
             get {
@@ -783,7 +792,7 @@ namespace CefSharp.Example.Properties {
         ///&lt;/head&gt;
         ///&lt;body&gt;
         ///    &lt;div class=&quot;container&quot;&gt;
-        ///        &lt;div  [rest of string was truncated]&quot;;.
+        ///        &lt;div class=&quot;page-he [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ScriptedMethodsTest {
             get {
@@ -806,7 +815,7 @@ namespace CefSharp.Example.Properties {
         ///            &lt;div&gt;
         ///                &lt;select style=&quot;float: left;&quot;&gt;
         ///                    &lt;option selected&gt;test&lt;/option&gt;
-        ///                    &lt; [rest of string was truncated]&quot;;.
+        ///                    &lt;option&gt;one&lt;/op [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TooltipTest {
             get {
@@ -831,7 +840,8 @@ namespace CefSharp.Example.Properties {
         ///                    color: black;
         ///                }
         ///                #pwDiv {
-        ///                    border: 2p [rest of string was truncated]&quot;;.
+        ///                    border: 2px solid black;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string UnicodeExampleGreaterThan32kb {
             get {
@@ -856,7 +866,8 @@ namespace CefSharp.Example.Properties {
         ///                    color: black;
         ///                }
         ///                #pwDiv {
-        ///                    border: 2p [rest of string was truncated]&quot;;.
+        ///                    border: 2px solid black;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string UnocodeExampleEqualTo32kb {
             get {

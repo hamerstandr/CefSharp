@@ -65,6 +65,14 @@
     <DocumentationFile>bin\x86\Release\CefSharp.Wpf.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,7 +110,6 @@
     <Compile Include="ChromiumWebBrowser.cs" />
     <Compile Include="PaintEventArgs.cs" />
     <Compile Include="Rendering\AbstractRenderHandler.cs" />
-    <Compile Include="Rendering\DirectWritableBitmapRenderHandler.cs" />
     <Compile Include="Rendering\Experimental\IncreaseBufferInteropRenderHandler.cs" />
     <Compile Include="Rendering\Experimental\ByteArrayWritableBitmapRenderHandler.cs" />
     <Compile Include="Rendering\InteropBitmapRenderHandler.cs" />

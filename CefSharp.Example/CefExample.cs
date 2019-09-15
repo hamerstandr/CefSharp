@@ -40,8 +40,11 @@ namespace CefSharp.Example
         private static readonly bool DebuggingSubProcess = Debugger.IsAttached;
         private static string PluginInformation = "";
 
-        public static void Init(AbstractCefSettings settings, IBrowserProcessHandler browserProcessHandler)
+        public static bool IsProcess { get; internal set; }
+
+        public static void Init(AbstractCefSettings settings, IBrowserProcessHandler browserProcessHandler, string RootPath = "",bool BrowserSubprocess=false)
         {
+            IsProcess = BrowserSubprocess;
             // Set Google API keys, used for Geolocation requests sans GPS.  See http://www.chromium.org/developers/how-tos/api-keys
             // Environment.SetEnvironmentVariable("GOOGLE_API_KEY", "");
             // Environment.SetEnvironmentVariable("GOOGLE_DEFAULT_CLIENT_ID", "");
@@ -153,7 +156,10 @@ namespace CefSharp.Example
             if (DebuggingSubProcess)
             {
                 var architecture = Environment.Is64BitProcess ? "x64" : "x86";
-                settings.BrowserSubprocessPath = "..\\..\\..\\..\\CefSharp.BrowserSubprocess\\bin\\" + architecture + "\\Debug\\CefSharp.BrowserSubprocess.exe";
+                if (!BrowserSubprocess)
+                    settings.BrowserSubprocessPath = "..\\..\\..\\..\\CefSharp.BrowserSubprocess\\bin\\" + architecture + "\\Debug\\CefSharp.BrowserSubprocess.exe";
+                else
+                    settings.BrowserSubprocessPath= /*architecture +*/ "CefSharp.BrowserSubprocess.exe";
             }
 
             settings.RegisterScheme(new CefCustomScheme
@@ -185,11 +191,15 @@ namespace CefSharp.Example
                 DomainName = "cefsharp.com",
                 IsSecure = true //treated with the same security rules as those applied to "https" URLs
             });
-
+            if (RootPath == "")
+                RootPath = @"..\..\..\..\CefSharp.Example\Resources";
+            else
+                RootPath = "Resources";
+            CefExample.RootPath = RootPath;
             settings.RegisterScheme(new CefCustomScheme
             {
                 SchemeName = "localfolder",
-                SchemeHandlerFactory = new FolderSchemeHandlerFactory(rootFolder: @"..\..\..\..\CefSharp.Example\Resources",
+                SchemeHandlerFactory = new FolderSchemeHandlerFactory(rootFolder: RootPath,
                                                                     schemeName: "localfolder", //Optional param no schemename checking if null
                                                                     hostName: "cefsharp", //Optional param no hostname checking if null
                                                                     defaultPage: "home.html") //Optional param will default to index.html
@@ -225,7 +235,17 @@ namespace CefSharp.Example
 
             Cef.AddCrossOriginWhitelistEntry(BaseUrl, "https", "cefsharp.com", false);
         }
-
+        #region hamed
+        public static string RootPath;
+        public static string GetVersion()
+        {
+            return string.Format("Chromium: {0}, CEF: {1}, CefSharp: {2}", Cef.ChromiumVersion, Cef.CefVersion, Cef.CefSharpVersion);
+        }
+        public static void DoMessageLoopWork()
+        {
+            Cef.DoMessageLoopWork();
+        }
+        #endregion
         public static async void RegisterTestResources(IWebBrowser browser)
         {
             var handler = browser.ResourceRequestHandlerFactory as ResourceRequestHandlerFactory;

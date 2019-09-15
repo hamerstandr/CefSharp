@@ -455,48 +455,45 @@ namespace CefSharp.WinForms.Example
                 browserSplitContainer.Panel2Collapsed = false;
             }
 
-            //Find devToolsControl in Controls collection
-            DevToolsContainerControl devToolsControl = null;
-            devToolsControl = browserSplitContainer.Panel2.Controls.Find(nameof(devToolsControl), false).FirstOrDefault() as DevToolsContainerControl;
+            //Find devToolsPanel in Controls collection
+            Panel devToolsPanel = null;
+            devToolsPanel = browserSplitContainer.Panel2.Controls.Find(nameof(devToolsPanel), false).FirstOrDefault() as Panel;
 
-            if (devToolsControl == null || devToolsControl.IsDisposed)
+            if (devToolsPanel == null || devToolsPanel.IsDisposed)
             {
-                devToolsControl = new DevToolsContainerControl()
+                devToolsPanel = new Panel()
                 {
-                    Name = nameof(devToolsControl),
+                    Name = nameof(devToolsPanel),
                     Dock = DockStyle.Fill
                 };
 
                 EventHandler devToolsPanelDisposedHandler = null;
                 devToolsPanelDisposedHandler = (s, e) =>
                 {
-                    browserSplitContainer.Panel2.Controls.Remove(devToolsControl);
+                    browserSplitContainer.Panel2.Controls.Remove(devToolsPanel);
                     browserSplitContainer.Panel2Collapsed = true;
-                    devToolsControl.Disposed -= devToolsPanelDisposedHandler;
+                    devToolsPanel.Disposed -= devToolsPanelDisposedHandler;
                 };
 
                 //Subscribe for devToolsPanel dispose event
-                devToolsControl.Disposed += devToolsPanelDisposedHandler;
+                devToolsPanel.Disposed += devToolsPanelDisposedHandler;
 
                 //Add new devToolsPanel instance to Controls collection
-                browserSplitContainer.Panel2.Controls.Add(devToolsControl);
+                browserSplitContainer.Panel2.Controls.Add(devToolsPanel);
             }
 
-            if (!devToolsControl.IsHandleCreated)
+            if (!devToolsPanel.IsHandleCreated)
             {
                 //It's very important the handle for the control is created prior to calling
-                //SetAsChild, if the handle hasn't been created then manually call CreateControl();
+                //SetAsChild, if the hasn't hasn't been created then manually call CreateControl();
                 //This code is not required for this example, it's left here for demo purposes.
-                devToolsControl.CreateControl();
+                devToolsPanel.CreateControl();
             }
 
-            //Devtools will be a child of the DevToolsContainerControl
-            //DevToolsContainerControl is a simple custom Control that's only required
-            //when CefSettings.MultiThreadedMessageLoop = false so arrow/tab key presses
-            //are forwarded to DevTools correctly.
-            var rect = devToolsControl.ClientRectangle;
+            //Devtools will be a child of the DevToolsPanel
+            var rect = devToolsPanel.ClientRectangle;
             var windowInfo = new WindowInfo();
-            windowInfo.SetAsChild(devToolsControl.Handle, rect.Left, rect.Top, rect.Right, rect.Bottom);
+            windowInfo.SetAsChild(devToolsPanel.Handle, rect.Left, rect.Top, rect.Right, rect.Bottom);
             Browser.GetBrowserHost().ShowDevTools(windowInfo);
         }
 

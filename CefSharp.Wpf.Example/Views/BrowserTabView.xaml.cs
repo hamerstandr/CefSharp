@@ -167,7 +167,7 @@ namespace CefSharp.Wpf.Example.Views
                 var msg = e.ConvertMessageTo<PostMessageExample>();
                 var callback = msg.Callback;
                 var type = msg.Type;
-                var property = msg.Data.Property;
+                //var property = msg.Data.Property;
 
                 callback.ExecuteAsync(type);
             }
@@ -180,7 +180,7 @@ namespace CefSharp.Wpf.Example.Views
 
         private void OnBeforeDownloadFired(object sender, DownloadItem e)
         {
-            this.UpdateDownloadAction("OnBeforeDownload", e);
+            UpdateDownloadAction("OnBeforeDownload", e);
         }
 
         private void OnDownloadUpdatedFired(object sender, DownloadItem e)
