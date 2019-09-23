@@ -120,7 +120,7 @@ namespace CefSharp.Wpf
         /// </summary>
         private IRequestContext requestContext;
         /// <summary>
-        /// Keep a short term copy of IDragData, so when calling DoDragDrop, DragEnter is called, 
+        /// Keep a short term copy of IDragData, so when calling DoDragDrop, DragEnter is called,
         /// we can reuse the drag data provided from CEF
         /// </summary>
         private IDragData currentDragData;
@@ -358,7 +358,7 @@ namespace CefSharp.Wpf
         public event EventHandler<PaintEventArgs> Paint;
 
         /// <summary>
-        /// Raised every time <see cref="IRenderWebBrowser.OnVirtualKeyboardRequested(IBrowser, TextInputMode)"/> is called. 
+        /// Raised every time <see cref="IRenderWebBrowser.OnVirtualKeyboardRequested(IBrowser, TextInputMode)"/> is called.
         /// It's important to note this event is fired on a CEF UI thread, which by default is not the same as your application UI thread
         /// </summary>
         public event EventHandler<VirtualKeyboardRequestedEventArgs> VirtualKeyboardRequested;
@@ -804,10 +804,10 @@ namespace CefSharp.Wpf
         }
 
         /// <summary>
-        /// Called when the user starts dragging content in the web view. 
+        /// Called when the user starts dragging content in the web view.
         /// OS APIs that run a system message loop may be used within the StartDragging call.
         /// Don't call any of IBrowserHost::DragSource*Ended* methods after returning false.
-        /// Call IBrowserHost.DragSourceEndedAt and DragSourceSystemDragEnded either synchronously or asynchronously to inform the web view that the drag operation has ended. 
+        /// Call IBrowserHost.DragSourceEndedAt and DragSourceSystemDragEnded either synchronously or asynchronously to inform the web view that the drag operation has ended.
         /// </summary>
         /// <param name="dragData"> Contextual information about the dragged content</param>
         /// <param name="allowedOps">allowed operations</param>
@@ -1012,7 +1012,7 @@ namespace CefSharp.Wpf
         }
 
         /// <summary>
-        /// Called when an on-screen keyboard should be shown or hidden for the specified browser. 
+        /// Called when an on-screen keyboard should be shown or hidden for the specified browser.
         /// </summary>
         /// <param name="browser">the browser</param>
         /// <param name="inputMode">specifies what kind of keyboard should be opened. If <see cref="TextInputMode.None"/>, any existing keyboard for this browser should be hidden.</param>
@@ -1306,7 +1306,7 @@ namespace CefSharp.Wpf
             DependencyProperty.Register(nameof(IsBrowserInitialized), typeof(bool), typeof(ChromiumWebBrowser), new PropertyMetadata(false, OnIsBrowserInitializedChanged));
 
         /// <summary>
-        /// Event called after the underlying CEF browser instance has been created. 
+        /// Event called after the underlying CEF browser instance has been created.
         /// </summary>
         public event DependencyPropertyChangedEventHandler IsBrowserInitializedChanged;
 
@@ -2313,7 +2313,7 @@ namespace CefSharp.Wpf
         /// <param name="newDpi">new DPI</param>
         /// <remarks>.Net 4.6.2 adds HwndSource.DpiChanged which could be used to automatically
         /// handle DPI change, unforunately we still target .Net 4.5.2</remarks>
-        public void NotifyDpiChange(double newDpi)
+        public virtual void NotifyDpiChange(double newDpi)
         {
             var notifyDpiChanged = DpiScaleFactor > 0 && !DpiScaleFactor.Equals(newDpi);
 
@@ -2324,19 +2324,29 @@ namespace CefSharp.Wpf
                 browser.GetHost().NotifyScreenInfoChanged();
             }
 
-            //Ignore this for custom bitmap factories                   
-            if (RenderHandler is WritableBitmapRenderHandler || RenderHandler is InteropBitmapRenderHandler)
+            //Ignore this for custom bitmap factories
+            if (RenderHandler is WritableBitmapRenderHandler || RenderHandler is InteropBitmapRenderHandler || RenderHandler is DirectWritableBitmapRenderHandler)
             {
-                if (DpiScaleFactor > 1.0 && !(RenderHandler is WritableBitmapRenderHandler))
+                if (Cef.CurrentlyOnThread(CefThreadIds.TID_UI) && !(RenderHandler is DirectWritableBitmapRenderHandler))
                 {
                     const int DefaultDpi = 96;
                     var scale = DefaultDpi * DpiScaleFactor;
 
-                    RenderHandler = new WritableBitmapRenderHandler(scale, scale);
+                    RenderHandler = new DirectWritableBitmapRenderHandler(scale, scale, invalidateDirtyRect: true);
                 }
-                else if (DpiScaleFactor == 1.0 && !(RenderHandler is InteropBitmapRenderHandler))
+                else
                 {
-                    RenderHandler = new InteropBitmapRenderHandler();
+                   if (DpiScaleFactor > 1.0 && !(RenderHandler is WritableBitmapRenderHandler))
+                    {
+                        const int DefaultDpi = 96;
+                        var scale = DefaultDpi * DpiScaleFactor;
+
+                        RenderHandler = new WritableBitmapRenderHandler(scale, scale);
+                    }
+                    else if (DpiScaleFactor == 1.0 && !(RenderHandler is InteropBitmapRenderHandler))
+                    {
+                        RenderHandler = new InteropBitmapRenderHandler();
+                    }
                 }
             }
         }
